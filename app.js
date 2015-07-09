@@ -5,10 +5,14 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+/* Order matters! */
+
 // Connect to local MongoDB instance
 var mongoose = require('mongoose');
 var passport = require('passport');
 mongoose.connect('mongodb://localhost/news');
+
+// Add the different files
 require('./models/Posts');
 require('./models/Comments');
 require('./models/Users');
